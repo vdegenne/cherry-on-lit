@@ -1,4 +1,6 @@
 node_modules
-*.ts
-*.map
-*.js
+
+/cherry-on-lit.js
+/cherry-on-lit.js.map
+/cherry-on-lit.d.ts
+/cherry-on-lit.d.ts.map
