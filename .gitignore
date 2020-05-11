@@ -4,3 +4,5 @@ node_modules
 /cherry-on-lit.js.map
 /cherry-on-lit.d.ts
 /cherry-on-lit.d.ts.map
+
+/test/test.js
