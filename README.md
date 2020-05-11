@@ -5,8 +5,8 @@ This package offers a mixin (`CherryOnLit`) you can use to aggregate elements wi
 ## Usage
 
 ```javascript
-import {LitElement, html} from 'lit-element';
-import {CherryOnLit} from 'cherry-on-lit';
+import { LitElement, html } from 'lit-element';
+import { CherryOnLit } from 'cherry-on-lit';
 
 class MyApp extends CherryOnLit(LitElement) {
   render () {
@@ -16,8 +16,7 @@ class MyApp extends CherryOnLit(LitElement) {
   }
 
   firstUpdate() {
-    // this.$.myElement points to the div in the template
-    setTimeout(() => this.$.myElement.innerText = 'that was a fake loading', 2000);
+    this.$.myElement.innerText = 'hello anonymous';
   }
 }
 ```
@@ -29,4 +28,21 @@ class MyApp extends CherryOnLit(LitElement) {
 
 ```
 npm install cherry-on-lit
+```
+
+## Notes
+
+Pros: 
+
+- It's easy to install
+- You don't need to write all the query functions.  
+
+Cons:
+
+- Everytime you request `$` it scan the dom, it may affect the performance of your code if your template is massive and you overuse it.
+- Your IDE will lose track of the typings because the `$` aggregator is naively querying the elements in the dom without any cast. For this reason I recommand using `typescript` and casting the elements as you request them:
+
+```typescript
+const i = this.$.importantInput as HTMLInputElement;
+i.value = 'new value';
 ```
