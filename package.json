@@ -1,6 +1,6 @@
 {
   "name": "cherry-on-lit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Extension that adds a $ to LitElement",
   "author": "Valentin Degenne <vdegenne@gmail.com>",
   "license": "MIT",
